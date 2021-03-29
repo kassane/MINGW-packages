@@ -1,6 +1,6 @@
 # Maintainer:  Matheus Catarino <matheus-catarino@hotmail.com>
 
-pkgbase=mingw-w64-zig
+pkgbase=mingw-w64-zig-git
 pkgname="${MINGW_PACKAGE_PREFIX}-zig"
 pkgver=master
 pkgrel=1
@@ -13,8 +13,8 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-cmake"
              "${MINGW_PACKAGE_PREFIX}-lld"
              "${MINGW_PACKAGE_PREFIX}-clang")
 depends=("${MINGW_PACKAGE_PREFIX}-llvm")
-source=("https://github.com/ziglang/zig.git")
-sha512sums=('skip')
+source=("zig::https://github.com/ziglang/zig.git")
+sha512sums=('SKIP')
 
 build() {
   cd ${srcdir}/zig
