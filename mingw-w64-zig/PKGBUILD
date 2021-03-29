@@ -2,7 +2,7 @@
 
 pkgbase=mingw-w64-zig
 pkgname="${MINGW_PACKAGE_PREFIX}-zig"
-pkgver=0.8.0-dev
+pkgver=master
 pkgrel=1
 pkgdesc='Zig is a general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software. (mingw-w64)'
 arch=('any')
