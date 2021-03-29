@@ -1,7 +1,7 @@
 # Maintainer:  Matheus Catarino <matheus-catarino@hotmail.com>
 
 pkgbase=mingw-w64-zig-git
-pkgname="${MINGW_PACKAGE_PREFIX}-zig"
+pkgname="${MINGW_PACKAGE_PREFIX}-zig-git"
 pkgver=0.8.0.dev
 pkgrel=1
 pkgdesc='Zig is a general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software. (mingw-w64)'
@@ -23,6 +23,7 @@ build() {
         -G"MSYS Makefiles" \
         -DCMAKE_CXX_COMPILER="clang++" \
         -DCMAKE_C_COMPILER="clang" \
+        -DZIG_PREFER_CLANG_CPP_DYLIB=true \
         -DZIG_TARGET_TRIPLE="x86_64-windows-gnu" \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_PREFIX_PATH=${MINGW_PREFIX} \
