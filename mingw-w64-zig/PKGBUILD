@@ -10,9 +10,10 @@ mingw_arch=('mingw64' 'ucrt64')
 url='https://ziglang.org'
 license=(MIT)
 makedepends=("${MINGW_PACKAGE_PREFIX}-cmake"
-             "${MINGW_PACKAGE_PREFIX}-lld"
-             "${MINGW_PACKAGE_PREFIX}-clang")
-depends=("${MINGW_PACKAGE_PREFIX}-llvm")
+             "${MINGW_PACKAGE_PREFIX}-lld")
+depends=("${MINGW_PACKAGE_PREFIX}-llvm"
+         "${MINGW_PACKAGE_PREFIX}-clang"
+         "${MINGW_PACKAGE_PREFIX}-compiler-rt")
 source=(zig::git+https://github.com/ziglang/zig.git)
 sha512sums=('SKIP')
 
