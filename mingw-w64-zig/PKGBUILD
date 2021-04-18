@@ -1,9 +1,9 @@
 # Maintainer:  Matheus Catarino <matheus-catarino@hotmail.com>
 
-pkgbase=mingw-w64-zig-git
-pkgname="${MINGW_PACKAGE_PREFIX}-zig-git"
-pkgver=0.8.0.dev
-pkgrel=1
+pkgbase=mingw-w64-zig
+pkgname="${MINGW_PACKAGE_PREFIX}-zig"
+pkgver=0.7.1
+pkgrel=3
 pkgdesc='Zig is a general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software. (mingw-w64)'
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64')
