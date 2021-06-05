@@ -3,10 +3,11 @@
 _realname=black
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
-pkgver=20.8b1
-pkgrel=3
+pkgver=21.5b2
+pkgrel=1
 pkgdesc='Uncompromising Python code formatter (mingw-w64)'
 arch=('any')
+mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64')
 url="https://github.com/psf/black"
 license=('MIT')
 depends=("${MINGW_PACKAGE_PREFIX}-python-appdirs"
@@ -22,7 +23,7 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-python-setuptools"
 checkdepends=("${MINGW_PACKAGE_PREFIX}-python-aiohttp-cors")
 options=('!emptydirs')
 source=("https://files.pythonhosted.org/packages/source/${_realname:0:1}/${_realname}/${_realname}-${pkgver}.tar.gz")
-sha256sums=('1c02557aa099101b9d21496f8a914e9ed2222ef70336404eeeac8edba836fbea')
+sha256sums=('1fc0e0a2c8ae7d269dfcf0c60a89afa299664f3e811395d40b1922dff8f854b5')
 
 prepare() {
   cd "$srcdir"

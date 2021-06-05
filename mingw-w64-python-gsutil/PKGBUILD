@@ -3,10 +3,11 @@
 _realname=gsutil
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
-pkgver=4.60
-pkgrel=2
+pkgver=4.62
+pkgrel=1
 pkgdesc='A command line tool for interacting with cloud storage services. (mingw-w64)'
 arch=('any')
+mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64')
 url="https://cloud.google.com/storage/docs/gsutil"
 license=('Apache')
 depends=("${MINGW_PACKAGE_PREFIX}-python")
@@ -14,7 +15,7 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-python-setuptools")
 checkdepends=("${MINGW_PACKAGE_PREFIX}-python-monotonic>=1.4")
 options=('!emptydirs')
 source=("https://github.com/GoogleCloudPlatform/gsutil/archive/v$pkgver.tar.gz")
-sha256sums=('e7269b6f1833336c15257840456d233845b9382c5479e07fa212a8dc50c4c80c')
+sha256sums=('7746b4613336b8c913da8de528d7169582a049221307a507c4ce80e8ce2db926')
 
 prepare() {  
   cd "$srcdir"
