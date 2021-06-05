@@ -4,13 +4,15 @@ pkgver=0.8.0
 pkgrel=1
 pkgdesc='Zig is a general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software. (mingw-w64)'
 arch=('any')
-mingw_arch=('mingw64')
+mingw_arch=('mingw64' 'ucrt64' 'clang64')
 url='https://ziglang.org'
 license=(MIT)
 makedepends=("${MINGW_PACKAGE_PREFIX}-cmake"
              "${MINGW_PACKAGE_PREFIX}-lld"
-             "${MINGW_PACKAGE_PREFIX}-clang")
-depends=("${MINGW_PACKAGE_PREFIX}-llvm")
+             )
+depends=("${MINGW_PACKAGE_PREFIX}-llvm"
+         "${MINGW_PACKAGE_PREFIX}-clang"
+         )
 source=("zig-${pkgver}.tar.gz::https://github.com/ziglang/zig/archive/${pkgver}.tar.gz")
 sha512sums=('2082810d5ab0560167766e80f0853e5ff99e32b1935836a6a0029b8e1c88061c55dd0c285cbcc506f4c38aac8477ec7162b771537699be9b3d387de94e3baa57')
 
@@ -22,6 +24,8 @@ build() {
         -DCMAKE_CXX_COMPILER="clang++" \
         -DCMAKE_C_COMPILER="clang" \
         -DCMAKE_BUILD_TYPE=Release \
+        -DZIG_PREFER_CLANG_CPP_DYLIB=true \
+        -DZIG_TARGET_TRIPLE="x86_64-windows-gnu" \
         -DCMAKE_INSTALL_PREFIX=${MINGW_PREFIX} \
         -B build-${MINGW_CHOST}
 
