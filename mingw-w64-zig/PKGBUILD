@@ -9,6 +9,7 @@ url='https://ziglang.org'
 license=(MIT)
 makedepends=("${MINGW_PACKAGE_PREFIX}-cmake"
              "${MINGW_PACKAGE_PREFIX}-lld"
+             "${MINGW_PACKAGE_PREFIX}-compiler-rt"
              )
 depends=("${MINGW_PACKAGE_PREFIX}-llvm"
          "${MINGW_PACKAGE_PREFIX}-clang"
@@ -27,6 +28,7 @@ build() {
         -DZIG_PREFER_CLANG_CPP_DYLIB=true \
         -DZIG_TARGET_TRIPLE="x86_64-windows-gnu" \
         -DCMAKE_INSTALL_PREFIX=${MINGW_PREFIX} \
+        -DZIG_OMIT_STAGE2=ON \
         -B build-${MINGW_CHOST}
 
   cmake --build build-${MINGW_CHOST} --config release --parallel
